@@ -2,7 +2,8 @@ language: c
 compiler:
   - gcc
   - clang
-
+script:
+  - autoconf && ./configure && make && make install
 
 notifications:
   email: zhipengh512@gmail.com
