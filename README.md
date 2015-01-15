@@ -1,6 +1,5 @@
 # ananas
-    Ananas is a key-value framework just like the VFS on Linux, it is supposed to manage the various key-value stores 
-and provide the user a uniform key-value interface.
+    Ananas is a key-value framework just like the VFS on Linux, it is supposed to manage the various key-value stores and provide the user a uniform key-value interface.
 
 Key Value Framework
 ============================
@@ -31,7 +30,8 @@ Install
 For linux user, just simply run:
 
  autoconf
- #if not works, try autoreconf -i
+ 
+ (if not works, try "autoreconf -i")
  
  ./configure
  
@@ -40,11 +40,13 @@ For linux user, just simply run:
  
 Limitation
 --------------------------
- *Currently, KVF can only run on linux, for other platforms could be supported later.
- *Some common mechanism will be implemented soon. 
+ 1, Currently, KVF can only run on linux, for other platforms could be supported later.
  
-Guide to header files
+ 2, Some common mechanism will be implemented soon. 
+ 
+Guide to source files
 --------------------------
+### Includes ###
 include/kvf/kvf_api.h
     Main interface to kvf.
 
@@ -59,3 +61,17 @@ include/kvf/kvf_type.h
 
 include/kvf_list.h
 	A simple list implementation.
+	
+### Source ###	
+src/kvf.c
+	The kvf's basic APIs.
+	
+src/pool.c
+	This file implements the basic operations of pool.
+
+src/crud.c
+	This file implements the basic operations of key-value objects.
+	
+Notes
+--------------------------
+	See doc/Key Value Framework Programming Howto.pdf for more detail.
