@@ -1,7 +1,6 @@
 language: c
 compiler:
   - gcc
-  - clang
 script:
   - autoconf && ./configure && make && make install
 
