@@ -3,12 +3,6 @@ compiler:
   - gcc
   - clang
 
-before_install: ./.travis/prepare.sh
-
-env:
-  - OPTS="--disable-ssl"
-  
-script: ./.travis/build.sh $OPTS
 
 notifications:
   email: zhipengh512@gmail.com
