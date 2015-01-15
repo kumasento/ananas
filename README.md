@@ -1,5 +1,5 @@
 # Ananas 
-
+[![Build Status](https://travis-ci.org/huaweistorage/ananas.png)](https://travis-ci.org/huaweistorage/ananas)
 ## Object Drive Key Value Framework
 
 ### Overview
