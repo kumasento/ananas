@@ -1,5 +1,6 @@
 # ananas
-Ananas is a key-value framework just like the VFS on Linux, it is supposed to manage the various key-value stores and provide the user a uniform key-value interface.
+    Ananas is a key-value framework just like the VFS on Linux, it is supposed to manage the various key-value stores 
+and provide the user a uniform key-value interface.
 
 Key Value Framework
 ============================
@@ -30,9 +31,13 @@ Install
 For linux user, just simply run:
 
  autoconf
+ #if not works, try autoreconf -i
+ 
  ./configure
+ 
  make & make install
-
+ 
+ 
 Limitation
 --------------------------
  *Currently, KVF can only run on linux, for other platforms could be supported later.
