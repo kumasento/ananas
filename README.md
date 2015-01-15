@@ -1,7 +1,6 @@
-# `Ananas` Key Value Framework
-============================
+# `Ananas` 
 
-http://
+## Object Drive Key Value Framework
 
 Overview
 --------
@@ -15,13 +14,13 @@ unified API to access different key value storage, just like applications access
 by virtual file system. As a result, it makes the key value based application programming simple.
 
 
-Requirements&Install
+Prerequisites
 --------------------------
 ### Linux Requirements
   * GNU-compatible Make or gmake
   * libtools
 
-Install
+How To Install
 --------------------------
 ### Linux Install
 For linux user, just simply run:
@@ -35,7 +34,7 @@ For linux user, just simply run:
  make & make install
  
  
-Limitation
+Limitations
 --------------------------
  1, Currently, `KVF` can only run on linux, for other platforms could be supported later.
  
