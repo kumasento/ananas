@@ -25,9 +25,7 @@ by virtual file system. As a result, it makes the key value based application pr
 #### Linux Install
 For linux user, just simply run:
 
- autoconf
- 
- (if not works, try "autoreconf -i")
+ autoreconf -i
  
  ./configure
  
