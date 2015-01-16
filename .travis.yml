@@ -2,7 +2,7 @@ language: c
 compiler:
   - gcc
 script:
-  - autoconf && ./configure && make && make install
+  - autoreconf -i && ./configure && make && make install
 
 notifications:
   email: zhipengh512@gmail.com
