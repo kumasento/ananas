@@ -5,4 +5,4 @@ script:
   - autoreconf -i && ./configure && make && make install
 
 notifications:
-  email: zhipengh512@gmail.com
+  email: zhipengh512@gmail.com thunder.zhang@huawei.com
