@@ -68,4 +68,4 @@ src/crud.c
 	
 ### Notes
 --------------------------
-	See [doc](https://github.com/huaweistorage/ananas/tree/master/doc) for more detail.
+	See https://github.com/huaweistorage/ananas/tree/master/doc for more detail.
