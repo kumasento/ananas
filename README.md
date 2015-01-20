@@ -1,5 +1,14 @@
 # Ananas 
 [![Build Status](https://travis-ci.org/huaweistorage/ananas.png)](https://travis-ci.org/huaweistorage/ananas)
+
+### Gerrit
+-----------------------
+We have integrated our github repo with Gerrithub.io, so if you want to contribute, it would be great if you could perform git ops to our gerrithub repo first, for example :
+git clone https://review.gerrithub.io/huaweistorage/ananas
+
+In this way we could utilize Gerrit code review for the project :)
+
+
 ## Object Drive Key Value Framework
 
 ### Overview
