@@ -32,7 +32,7 @@
     <div id="main_content_wrap" class="outer">
       <section id="main_content" class="inner">
         <h3>
-<a id="11-overview" class="anchor" href="#11-overview" aria-hidden="true"><span class="octicon octicon-link"></span></a>1.1 Overview</h3>
+<a id="overview" class="anchor" href="#overview" aria-hidden="true"><span class="octicon octicon-link"></span></a>Overview</h3>
 
 <p>This section describes basic Key Value Framework (KVF) concept and the overview, and the interface definition. Through KVF it defines unified data model, function, and parameters.</p>
 
@@ -41,7 +41,7 @@
 <p>And this framework provides unified API for upper application to call, to avoid write multiple adapters for different KVS, like call adapter for different vendors KVSs.</p>
 
 <h3>
-<a id="12-key-value-storage-introduction" class="anchor" href="#12-key-value-storage-introduction" aria-hidden="true"><span class="octicon octicon-link"></span></a>1.2 Key Value Storage Introduction</h3>
+<a id="key-value-storage-introduction" class="anchor" href="#key-value-storage-introduction" aria-hidden="true"><span class="octicon octicon-link"></span></a>Key Value Storage Introduction</h3>
 
 <p>Traditional storage is based on SCSI architecture, clients uses Logical Block Address (LBA) to read and write data. Upon block provides more services, such as file system, data base, etc.</p>
 
@@ -57,6 +57,35 @@
 <a id="standalone-kvs" class="anchor" href="#standalone-kvs" aria-hidden="true"><span class="octicon octicon-link"></span></a>Standalone KVS</h4>
 
 <p>Standalone KVS specifies an application scenario where application client read and write date directly from one standalone device (such as single hard disk, single flash card, etc). Related products include Huawei UDS Smart Disk, HGST libzbc with KV, Seagate Kinetic and SanDisk Fusionio etc.</p>
+
+<h4>
+<a id="distributed-kvs" class="anchor" href="#distributed-kvs" aria-hidden="true"><span class="octicon octicon-link"></span></a>Distributed KVS</h4>
+
+<p>Distribute KVS specifies an application scenario where data has redundancy among servers and racks in one data center, like replica / erasure code. Related products include Ceph RADOS, mechcached, mongoDB, Huawei UDS SoD (Sea of Disks), etc.</p>
+
+<h4>
+<a id="multiple-data-center-kvs" class="anchor" href="#multiple-data-center-kvs" aria-hidden="true"><span class="octicon octicon-link"></span></a>Multiple Data Center KVS</h4>
+
+<p>Multiple Data Center KVS specifies an application scenario where data has redundancy among multiple data center, also has replica / erasure code feature. Related products include amazon S3, SWIFT, etc.
+Three kinds of KVS are connected, and CAN be mutual dependant. Like Multiple Data Center KVS may be based on Distributed KVS, and Distributed KVS may be based on Standalone KVS.</p>
+
+<h3>
+<a id="key-value-framework-kvf-data-model" class="anchor" href="#key-value-framework-kvf-data-model" aria-hidden="true"><span class="octicon octicon-link"></span></a>Key Value Framework (KVF) Data Model</h3>
+
+<p>Based on Key Value Framework (KVF), different vendors can register its Key Value Library (KV-LIB) to manage it Key Value Storage (KVS). These KV-LIBs should follow KVF data model, KVS provides pools, and pool provides objects. And pool supports nesting design, which means one pool can be on top of another pool, Shown as Figure_2.</p>
+
+<p><img src="https://lh4.googleusercontent.com/-MdmZ6073Lmw/VMN_N0uxmCI/AAAAAAAAOpo/Y7Up3zOmIGs/w2198-h935-no/figure%2B2.jpg" alt="Figure_2 Key Value Framework Data Model"></p>
+
+<h3>
+<a id="key-value-framwork-architecture" class="anchor" href="#key-value-framwork-architecture" aria-hidden="true"><span class="octicon octicon-link"></span></a>Key Value Framwork Architecture</h3>
+
+<p>Key Value Framework (KVF) provides 2 layer interfaces: Lower Layer Manage (LLM) API and Upper Layer Access (ULA) API, shown as Figure_3.</p>
+
+<p><img src="https://lh3.googleusercontent.com/-2zhoaRdOOyE/VMN_N4CKUCI/AAAAAAAAOps/37g-f3fKaO0/w2240-h818-no/figure%2B3.jpg" alt="Figure_3 Key Value Framework Architecture"></p>
+
+<p>LLM(Lower Level Manage) provides register and unregister functions, and has 3 kinds of API: Object, Pool, and KV-LIB(Key Value Libraray).
+ULA(Upper Layer Access) provides unified key value interface, then it makes application program simple and compatible.
+Also some applications may provide key value service by leveraging ULA interface based on other KVS, and then it can be re-registered into key value framework, this make nesting design easily.</p>
       </section>
     </div>
 
