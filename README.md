@@ -72,4 +72,6 @@ src/crud.c
 	This file implements the basic operations of key-value objects.
 	
 ## Notes
-	See [doc](https://github.com/huaweistorage/ananas/tree/master/doc) for more detail.
+See [doc][1] for more detail.
+
+[1]: https://github.com/huaweistorage/ananas/tree/master/doc
