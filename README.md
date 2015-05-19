@@ -8,6 +8,9 @@ git clone https://review.gerrithub.io/huaweistorage/ananas
 
 In this way we could utilize Gerrit code review for the project :)
 
+#### Googlegroup
+
+https://groups.google.com/d/forum/project-ananas You're welcomed to join and start a discussion right away !
 
 # Object Drive Key Value Framework
 
