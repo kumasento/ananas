@@ -39,4 +39,5 @@ pkginclude_HEADERS = \
   include/kvf/kvf_api.h \
   include/kvf/kvf_list.h \
   include/kvf/kvf_type.h \
+  include/kvf/kvf_err_code.h \
   include/kvf/kvf.h
