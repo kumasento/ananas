@@ -67,7 +67,7 @@ typedef struct kvf_type
 	struct kvf_operations* kvf_ops; //the kvf operations
 	struct pool_operations* pool_ops; //the pool operations of the kvf
 
-	struct list kvf_node; 	//all the kvf instance are linked together
+	struct list kvf_list; 	//all the kvf instance are linked together
 	struct list pool_list; 	//all of pool instance of a kvf are linked together
 	void* kvf_private;
 } kvf_type_t;
@@ -387,6 +387,8 @@ typedef struct kv_props {
 
 struct kv_iter;
 
+typedef s32 (*async_crud_cb) (pool_t *, const string_t *, const string_t *, const kv_props_t *, void *, s32 err_code);
+
 /** \brief
  *
  *  the struct kv_operations.
@@ -414,13 +416,23 @@ typedef struct kv_operations {
 			const del_options_t* delopts);
 
 	/*
+	* async operations
+	*/	
+	s32 (*async_put)(pool_t* pool, const string_t* key, const string_t* value, const kv_props_t* props, const put_options_t* putopts, async_crud_cb put_fn);
+	s32 (*async_update)(pool_t* pool, const string_t* key, const string_t* value, const kv_props_t* props, const put_options_t* putopts,async_crud_cb put_fn);
+	s32 (*async_get)(pool_t* pool, const string_t* key, string_t* value, const kv_props_t* props, const get_options_t* getopts, async_crud_cb  get_fn);
+	s32 (*async_del)(pool_t*  pool, const string_t* key, const string_t* value, const kv_props_t* props, const del_options_t* delopts, async_crud_cb del_fn);		
+	/*
 	 * iterator
 	 */
 	s32 (*iter_open)(const pool_t* p, const string_t* key_regex, s32 limit,
 			s32 timeout, struct kv_iter* it);
 	s32 (*iter_next)(pool_t* p, struct kv_iter* it, kv_array_t* kvarray);
 	s32 (*iter_close)(pool_t* p, struct kv_iter* it);
-
+	
+	s32 (*iter_pos_deserialize)(void** w, s8* buf, u32 len);
+	s32 (*iter_pos_serialize)(void* w, s8** buf, u32* len);
+	
 	/*
 	 * peer to peer copy
 	 */
